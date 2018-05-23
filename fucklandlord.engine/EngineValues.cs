@@ -33,16 +33,14 @@ namespace fucklandlord.engine
                 List<String> cards = new List<string>();
 
                 // 13*4==52
-                foreach (String card_value in CardValues)
+                for (int index = 0; index < 13; index++ )
                 {
-                    if (!card_value.Equals("LJ") && !card_value.Equals("BJ"))
+                    foreach (String card_color in CardColors)
                     {
-                        foreach (String card_color in CardColors)
-                        {
-                            cards.Add(card_value + "*" + card_color);  //  value*color
-                        }
+                        cards.Add(CardValues[index] + "*" + card_color);  //  value*color
                     }
                 }
+
                 // 52+2 == 54
                 cards.Add(CardValues[13]);
                 cards.Add(CardValues[14]);
@@ -92,13 +90,14 @@ namespace fucklandlord.engine
                     wulianshun = new Dictionary<string, CardType>();
                     int weight = 1;
                     String key = null;
+
                     for (int index = 0; index < 8; index++)
                     {
-                        key = CardValues[index] 
-                            + "-" + CardValues[index + 1] 
-                            + "-" + CardValues[index + 2] 
+                        key = CardValues[index + 4] 
                             + "-" + CardValues[index + 3] 
-                            + "-" + CardValues[index + 4];
+                            + "-" + CardValues[index + 2] 
+                            + "-" + CardValues[index + 1] 
+                            + "-" + CardValues[index];
 
                         wulianshun.Add(key, new CardType() {CardKey = key, Weight = weight++, Name = CardName.WuLianShun, IsBomb = false});
                     }
@@ -125,12 +124,12 @@ namespace fucklandlord.engine
 
                     for (int index = 0; index < 7; index++)
                     {
-                        key = CardValues[index] 
-                            + "-" + CardValues[index + 1] 
-                            + "-" + CardValues[index + 2] 
-                            + "-" + CardValues[index + 3] 
+                        key = CardValues[index + 5] 
                             + "-" + CardValues[index + 4] 
-                            + "-" + CardValues[index + 5];
+                            + "-" + CardValues[index + 3] 
+                            + "-" + CardValues[index + 2] 
+                            + "-" + CardValues[index + 1] 
+                            + "-" + CardValues[index];
 
                         liulianshun.Add(key, new CardType() {CardKey = key, Weight = weight++, Name = CardName.LiuLianShun, IsBomb = false});
                     }
@@ -157,13 +156,13 @@ namespace fucklandlord.engine
 
                     for (int index = 0; index < 6; index++)
                     {
-                        key = CardValues[index]
-                            + "-" + CardValues[index + 1]
-                            + "-" + CardValues[index + 2]
-                            + "-" + CardValues[index + 3]
-                            + "-" + CardValues[index + 4]
+                        key = CardValues[index + 6]
                             + "-" + CardValues[index + 5]
-                            + "-" + CardValues[index + 6];
+                            + "-" + CardValues[index + 4]
+                            + "-" + CardValues[index + 3]
+                            + "-" + CardValues[index + 2]
+                            + "-" + CardValues[index + 1]
+                            + "-" + CardValues[index];
                         qilianshun.Add(key, new CardType() {CardKey = key, Weight = weight++, Name = CardName.QiLianShun, IsBomb = false});
                     }
                 }
@@ -189,14 +188,14 @@ namespace fucklandlord.engine
 
                     for (int index = 0; index < 5; index++)
                     {
-                        key = CardValues[index]
-                            + "-" + CardValues[index + 1]
-                            + "-" + CardValues[index + 2]
-                            + "-" + CardValues[index + 3]
-                            + "-" + CardValues[index + 4]
-                            + "-" + CardValues[index + 5]
+                        key = CardValues[index + 7]
                             + "-" + CardValues[index + 6]
-                            + "-" + CardValues[index + 7];
+                            + "-" + CardValues[index + 5]
+                            + "-" + CardValues[index + 4]
+                            + "-" + CardValues[index + 3]
+                            + "-" + CardValues[index + 2]
+                            + "-" + CardValues[index + 1]
+                            + "-" + CardValues[index];
                         balianshun.Add(key, new CardType() {CardKey = key, Weight = weight++, Name = CardName.BaLianShun, IsBomb = false});
                     }
                 }
@@ -222,15 +221,15 @@ namespace fucklandlord.engine
 
                     for (int index = 0; index < 4; index++)
                     {
-                        key = CardValues[index]
-                            + "-" + CardValues[index + 1]
-                            + "-" + CardValues[index + 2]
-                            + "-" + CardValues[index + 3]
-                            + "-" + CardValues[index + 4]
-                            + "-" + CardValues[index + 5]
-                            + "-" + CardValues[index + 6]
+                        key = CardValues[index + 8]
                             + "-" + CardValues[index + 7]
-                            + "-" + CardValues[index + 8];
+                            + "-" + CardValues[index + 6]
+                            + "-" + CardValues[index + 5]
+                            + "-" + CardValues[index + 4]
+                            + "-" + CardValues[index + 3]
+                            + "-" + CardValues[index + 2]
+                            + "-" + CardValues[index + 1]
+                            + "-" + CardValues[index];
                         jiulianshun.Add(key, new CardType() {CardKey = key, Weight = weight++, Name = CardName.JiuLianShun, IsBomb = false});
                     }
                 }
@@ -256,16 +255,16 @@ namespace fucklandlord.engine
 
                     for (int index = 0; index < 3; index++)
                     {
-                        key = CardValues[index]
-                            + "-" + CardValues[index + 1]
-                            + "-" + CardValues[index + 2]
-                            + "-" + CardValues[index + 3]
-                            + "-" + CardValues[index + 4]
-                            + "-" + CardValues[index + 5]
-                            + "-" + CardValues[index + 6]
-                            + "-" + CardValues[index + 7]
+                        key = CardValues[index + 9]
                             + "-" + CardValues[index + 8]
-                            + "-" + CardValues[index + 9];
+                            + "-" + CardValues[index + 7]
+                            + "-" + CardValues[index + 6]
+                            + "-" + CardValues[index + 5]
+                            + "-" + CardValues[index + 4]
+                            + "-" + CardValues[index + 3]
+                            + "-" + CardValues[index + 2]
+                            + "-" + CardValues[index + 1]
+                            + "-" + CardValues[index];
                         shilianshun.Add(key, new CardType() {CardKey = key, Weight = weight++, Name = CardName.ShiLianShun, IsBomb = false});
                     }
                 }
@@ -291,17 +290,17 @@ namespace fucklandlord.engine
 
                     for (int index = 0; index < 2; index++)
                     {
-                        key = CardValues[index]
-                            + "-" + CardValues[index + 1]
-                            + "-" + CardValues[index + 2]
-                            + "-" + CardValues[index + 3]
-                            + "-" + CardValues[index + 4]
-                            + "-" + CardValues[index + 5]
-                            + "-" + CardValues[index + 6]
-                            + "-" + CardValues[index + 7]
-                            + "-" + CardValues[index + 8]
+                        key = CardValues[index + 10]
                             + "-" + CardValues[index + 9]
-                            + "-" + CardValues[index + 10];
+                            + "-" + CardValues[index + 8]
+                            + "-" + CardValues[index + 7]
+                            + "-" + CardValues[index + 6]
+                            + "-" + CardValues[index + 5]
+                            + "-" + CardValues[index + 4]
+                            + "-" + CardValues[index + 3]
+                            + "-" + CardValues[index + 2]
+                            + "-" + CardValues[index + 1]
+                            + "-" + CardValues[index];
                         shiyilianshun.Add(key, new CardType() {CardKey = key, Weight = weight++, Name = CardName.ShiYiLianShun, IsBomb = false});
                     }
                 }
@@ -327,18 +326,18 @@ namespace fucklandlord.engine
 
                     for (int index = 0; index < 1; index++)
                     {
-                        key = CardValues[index]
-                            + "-" + CardValues[index + 1]
-                            + "-" + CardValues[index + 2]
-                            + "-" + CardValues[index + 3]
-                            + "-" + CardValues[index + 4]
-                            + "-" + CardValues[index + 5]
-                            + "-" + CardValues[index + 6]
-                            + "-" + CardValues[index + 7]
-                            + "-" + CardValues[index + 8]
-                            + "-" + CardValues[index + 9]
+                        key = CardValues[index + 11]
                             + "-" + CardValues[index + 10]
-                            + "-" + CardValues[index + 11];
+                            + "-" + CardValues[index + 9]
+                            + "-" + CardValues[index + 8]
+                            + "-" + CardValues[index + 7]
+                            + "-" + CardValues[index + 6]
+                            + "-" + CardValues[index + 5]
+                            + "-" + CardValues[index + 4]
+                            + "-" + CardValues[index + 3]
+                            + "-" + CardValues[index + 2]
+                            + "-" + CardValues[index + 1]
+                            + "-" + CardValues[index];
                         shierlianshun.Add(key, new CardType() {CardKey = key, Weight = weight++, Name = CardName.ShiErLianShun, IsBomb = false});
                     }
                 }
@@ -365,7 +364,7 @@ namespace fucklandlord.engine
 
                     for (int index = 0; index < 13; index++)
                     {
-                        key = CardValues[index] + "-" + CardValues[index];
+                        key = EngineTool.RepeatCard(index, 2);
                         duizi.Add(key, new CardType() {CardKey = key, Weight = weight++, Name = CardName.DuiZi, IsBomb = false});
                     }
                 }
@@ -391,9 +390,9 @@ namespace fucklandlord.engine
 
                     for (int index = 0; index < 10; index++)
                     {
-                        key = CardValues[index] + "-" + CardValues[index] + "-"
-                                     + CardValues[index + 1] + "-" + CardValues[index + 1] + "-"
-                                     + CardValues[index + 2] + "-" + CardValues[index + 2];
+                        key = EngineTool.RepeatCard(index + 2, 2) + "-" + 
+                              EngineTool.RepeatCard(index + 1, 2) + "-" +
+                              EngineTool.RepeatCard(index, 2);
                         sanliandui.Add(key, new CardType() {CardKey = key, Weight = weight++, Name = CardName.SanLianDui, IsBomb = false});
                     }
                 }
@@ -419,10 +418,10 @@ namespace fucklandlord.engine
 
                     for (int index = 0; index < 9; index++)
                     {
-                        key = CardValues[index] + "-" + CardValues[index] + "-"
-                                     + CardValues[index + 1] + "-" + CardValues[index + 1] + "-"
-                                     + CardValues[index + 2] + "-" + CardValues[index + 2] + "-"
-                                     + CardValues[index + 3] + "-" + CardValues[index + 3];
+                        key = EngineTool.RepeatCard(index + 3, 2) + "-" +
+                              EngineTool.RepeatCard(index + 2, 2) + "-" +
+                              EngineTool.RepeatCard(index + 1, 2) + "-" +
+                              EngineTool.RepeatCard(index, 2);
                         siliandui.Add(key, new CardType() {CardKey = key, Weight = weight++, Name = CardName.SiLianDui, IsBomb = false});
                     }
                 }
@@ -448,11 +447,11 @@ namespace fucklandlord.engine
 
                     for (int index = 0; index < 8; index++)
                     {
-                        key = CardValues[index] + "-" + CardValues[index] + "-"
-                                     + CardValues[index + 1] + "-" + CardValues[index + 1] + "-"
-                                     + CardValues[index + 2] + "-" + CardValues[index + 2] + "-"
-                                     + CardValues[index + 3] + "-" + CardValues[index + 3] + "-"
-                                     + CardValues[index + 4] + "-" + CardValues[index + 4];
+                        key = EngineTool.RepeatCard(index + 4, 2) + "-" +
+                              EngineTool.RepeatCard(index + 3, 2) + "-" +
+                              EngineTool.RepeatCard(index + 2, 2) + "-" +
+                              EngineTool.RepeatCard(index + 1, 2) + "-" +
+                              EngineTool.RepeatCard(index, 2);
                         wuliandui.Add(key, new CardType() {CardKey = key, Weight = weight++, Name = CardName.WuLianDui, IsBomb = false});
                     }
                 }
@@ -478,12 +477,12 @@ namespace fucklandlord.engine
 
                     for (int index = 0; index < 7; index++)
                     {
-                        key = CardValues[index] + "-" + CardValues[index] + "-"
-                                     + CardValues[index + 1] + "-" + CardValues[index + 1] + "-"
-                                     + CardValues[index + 2] + "-" + CardValues[index + 2] + "-"
-                                     + CardValues[index + 3] + "-" + CardValues[index + 3] + "-"
-                                     + CardValues[index + 4] + "-" + CardValues[index + 4] + "-"
-                                     + CardValues[index + 5] + "-" + CardValues[index + 5];
+                        key = EngineTool.RepeatCard(index + 5, 2) + "-" +
+                              EngineTool.RepeatCard(index + 4, 2) + "-" +
+                              EngineTool.RepeatCard(index + 3, 2) + "-" +
+                              EngineTool.RepeatCard(index + 2, 2) + "-" +
+                              EngineTool.RepeatCard(index + 1, 2) + "-" +
+                              EngineTool.RepeatCard(index, 2);
                         liuliandui.Add(key, new CardType() {CardKey = key, Weight = weight++, Name = CardName.LiuLianDui, IsBomb = false});
                     }
                 }
@@ -510,13 +509,13 @@ namespace fucklandlord.engine
 
                     for (int index = 0; index < 6; index++)
                     {
-                        key = CardValues[index] + "-" + CardValues[index] + "-"
-                                     + CardValues[index + 1] + "-" + CardValues[index + 1] + "-"
-                                     + CardValues[index + 2] + "-" + CardValues[index + 2] + "-"
-                                     + CardValues[index + 3] + "-" + CardValues[index + 3] + "-"
-                                     + CardValues[index + 4] + "-" + CardValues[index + 4] + "-"
-                                     + CardValues[index + 5] + "-" + CardValues[index + 5] + "-"
-                                     + CardValues[index + 6] + "-" + CardValues[index + 6];
+                        key = EngineTool.RepeatCard(index + 6, 2) + "-" +
+                              EngineTool.RepeatCard(index + 5, 2) + "-" +
+                              EngineTool.RepeatCard(index + 4, 2) + "-" +
+                              EngineTool.RepeatCard(index + 3, 2) + "-" +
+                              EngineTool.RepeatCard(index + 2, 2) + "-" +
+                              EngineTool.RepeatCard(index + 1, 2) + "-" +
+                              EngineTool.RepeatCard(index, 2);
                         qiliandui.Add(key, new CardType() {CardKey = key, Weight = weight++, Name = CardName.QiLianDui, IsBomb = false});
                     }
                 }
@@ -542,14 +541,14 @@ namespace fucklandlord.engine
 
                     for (int index = 0; index < 5; index++)
                     {
-                        key = CardValues[index] + "-" + CardValues[index] + "-"
-                                     + CardValues[index + 1] + "-" + CardValues[index + 1] + "-"
-                                     + CardValues[index + 2] + "-" + CardValues[index + 2] + "-"
-                                     + CardValues[index + 3] + "-" + CardValues[index + 3] + "-"
-                                     + CardValues[index + 4] + "-" + CardValues[index + 4] + "-"
-                                     + CardValues[index + 5] + "-" + CardValues[index + 5] + "-"
-                                     + CardValues[index + 6] + "-" + CardValues[index + 6] + "-"
-                                     + CardValues[index + 7] + "-" + CardValues[index + 7];
+                        key = EngineTool.RepeatCard(index + 7, 2) + "-" +
+                              EngineTool.RepeatCard(index + 6, 2) + "-" +
+                              EngineTool.RepeatCard(index + 5, 2) + "-" +
+                              EngineTool.RepeatCard(index + 4, 2) + "-" +
+                              EngineTool.RepeatCard(index + 3, 2) + "-" +
+                              EngineTool.RepeatCard(index + 2, 2) + "-" +
+                              EngineTool.RepeatCard(index + 1, 2) + "-" +
+                              EngineTool.RepeatCard(index, 2);
                         baliandui.Add(key, new CardType() {CardKey = key, Weight = weight++, Name = CardName.BaLianDui, IsBomb = false});
                     }
                 }
@@ -575,15 +574,15 @@ namespace fucklandlord.engine
 
                     for (int index = 0; index < 4; index++)
                     {
-                        key = CardValues[index] + "-" + CardValues[index] + "-"
-                                     + CardValues[index + 1] + "-" + CardValues[index + 1] + "-"
-                                     + CardValues[index + 2] + "-" + CardValues[index + 2] + "-"
-                                     + CardValues[index + 3] + "-" + CardValues[index + 3] + "-"
-                                     + CardValues[index + 4] + "-" + CardValues[index + 4] + "-"
-                                     + CardValues[index + 5] + "-" + CardValues[index + 5] + "-"
-                                     + CardValues[index + 6] + "-" + CardValues[index + 6] + "-"
-                                     + CardValues[index + 7] + "-" + CardValues[index + 7] + "-"
-                                     + CardValues[index + 8] + "-" + CardValues[index + 8];
+                        key = EngineTool.RepeatCard(index + 8, 2) + "-" +
+                              EngineTool.RepeatCard(index + 7, 2) + "-" +
+                              EngineTool.RepeatCard(index + 6, 2) + "-" +
+                              EngineTool.RepeatCard(index + 5, 2) + "-" +
+                              EngineTool.RepeatCard(index + 4, 2) + "-" +
+                              EngineTool.RepeatCard(index + 3, 2) + "-" +
+                              EngineTool.RepeatCard(index + 2, 2) + "-" +
+                              EngineTool.RepeatCard(index + 1, 2) + "-" +
+                              EngineTool.RepeatCard(index, 2);
                         jiuliandui.Add(key, new CardType() {CardKey = key, Weight = weight++, Name = CardName.JiuLianDui, IsBomb = false});
                     }
                 }
@@ -610,16 +609,16 @@ namespace fucklandlord.engine
 
                     for (int index = 0; index < 3; index++)
                     {
-                        key = CardValues[index] + "-" + CardValues[index] + "-"
-                                     + CardValues[index + 1] + "-" + CardValues[index + 1] + "-"
-                                     + CardValues[index + 2] + "-" + CardValues[index + 2] + "-"
-                                     + CardValues[index + 3] + "-" + CardValues[index + 3] + "-"
-                                     + CardValues[index + 4] + "-" + CardValues[index + 4] + "-"
-                                     + CardValues[index + 5] + "-" + CardValues[index + 5] + "-"
-                                     + CardValues[index + 6] + "-" + CardValues[index + 6] + "-"
-                                     + CardValues[index + 7] + "-" + CardValues[index + 7] + "-"
-                                     + CardValues[index + 8] + "-" + CardValues[index + 8] + "-"
-                                     + CardValues[index + 9] + "-" + CardValues[index + 9];
+                        key = EngineTool.RepeatCard(index + 9, 2) + "-" +
+                              EngineTool.RepeatCard(index + 8, 2) + "-" +
+                              EngineTool.RepeatCard(index + 7, 2) + "-" +
+                              EngineTool.RepeatCard(index + 6, 2) + "-" +
+                              EngineTool.RepeatCard(index + 5, 2) + "-" +
+                              EngineTool.RepeatCard(index + 4, 2) + "-" +
+                              EngineTool.RepeatCard(index + 3, 2) + "-" +
+                              EngineTool.RepeatCard(index + 2, 2) + "-" +
+                              EngineTool.RepeatCard(index + 1, 2) + "-" +
+                              EngineTool.RepeatCard(index, 2);
                         shiliandui.Add(key, new CardType() {CardKey = key, Weight = weight++, Name = CardName.ShiLianDui, IsBomb = false});
                     }
                 }
@@ -645,7 +644,7 @@ namespace fucklandlord.engine
 
                     for (int index = 0; index < 13; index++)
                     {
-                        key = CardValues[index] + "-" + CardValues[index] + "-" + CardValues[index];
+                        key = EngineTool.RepeatCard(index, 3);
                         sanzhang.Add(key, new CardType() {CardKey = key, Weight = weight++, Name = CardName.SanZhang, IsBomb = false});
                     }
                 }
@@ -672,8 +671,8 @@ namespace fucklandlord.engine
 
                     for (int index = 0; index < 11; index++)
                     {
-                        key = CardValues[index] + "-" + CardValues[index] + "-" + CardValues[index] + "-"
-                            + CardValues[index + 1] + "-" + CardValues[index + 1] + "-" + CardValues[index + 1];
+                        key = EngineTool.RepeatCard(index + 1, 3) + "-" +
+                              EngineTool.RepeatCard(index, 3);
                         feiji.Add(key, new CardType() {CardKey = key, Weight = weight++, Name = CardName.FeiJi, IsBomb = false});
                     }
                 }
@@ -699,9 +698,9 @@ namespace fucklandlord.engine
 
                     for (int index = 0; index < 10; index++)
                     {
-                        key = CardValues[index] + "-" + CardValues[index] + "-" + CardValues[index] + "-"
-                            + CardValues[index + 1] + "-" + CardValues[index + 1] + "-" + CardValues[index + 1] + "-"
-                            + CardValues[index + 2] + "-" + CardValues[index + 2] + "-" + CardValues[index + 2];
+                        key = EngineTool.RepeatCard(index + 2, 3) + "-" +
+                              EngineTool.RepeatCard(index + 1, 3) + "-" +
+                              EngineTool.RepeatCard(index, 3);
                         sanlianfeiji.Add(key, new CardType() {CardKey = key, Weight = weight++, Name = CardName.SanLianFeiJi, IsBomb = false});
                     }
                 }
@@ -728,10 +727,10 @@ namespace fucklandlord.engine
 
                     for (int index = 0; index < 9; index++)
                     {
-                        key = CardValues[index] + "-" + CardValues[index] + "-" + CardValues[index] + "-"
-                            + CardValues[index + 1] + "-" + CardValues[index + 1] + "-" + CardValues[index + 1] + "-"
-                            + CardValues[index + 2] + "-" + CardValues[index + 2] + "-" + CardValues[index + 2] + "-"
-                            + CardValues[index + 3] + "-" + CardValues[index + 3] + "-" + CardValues[index + 3];
+                        key = EngineTool.RepeatCard(index + 3, 3) + "-" +
+                              EngineTool.RepeatCard(index + 2, 3) + "-" +
+                              EngineTool.RepeatCard(index + 1, 3) + "-" +
+                              EngineTool.RepeatCard(index, 3);
                         silianfeiji.Add(key, new CardType() {CardKey = key, Weight = weight++, Name = CardName.SiLianFeiJi, IsBomb = false});
                     }
                 }
@@ -758,11 +757,11 @@ namespace fucklandlord.engine
 
                     for (int index = 0; index < 8; index++)
                     {
-                        key = CardValues[index] + "-" + CardValues[index] + "-" + CardValues[index] + "-"
-                                + CardValues[index + 1] + "-" + CardValues[index + 1] + "-" + CardValues[index + 1] + "-"
-                                + CardValues[index + 2] + "-" + CardValues[index + 2] + "-" + CardValues[index + 2] + "-"
-                                + CardValues[index + 3] + "-" + CardValues[index + 3] + "-" + CardValues[index + 3] + "-"
-                                + CardValues[index + 4] + "-" + CardValues[index + 4] + "-" + CardValues[index + 4];
+                        key = EngineTool.RepeatCard(index + 4, 3) + "-" +
+                              EngineTool.RepeatCard(index + 3, 3) + "-" +
+                              EngineTool.RepeatCard(index + 2, 3) + "-" +
+                              EngineTool.RepeatCard(index + 1, 3) + "-" +
+                              EngineTool.RepeatCard(index, 3);
                         wulianfeiji.Add(key, new CardType() {CardKey = key, Weight = weight++, Name = CardName.WuLianFeiJi, IsBomb = false});
                     }
                 }
@@ -788,12 +787,12 @@ namespace fucklandlord.engine
 
                     for (int index = 0; index < 7; index++)
                     {
-                        key = CardValues[index] + "-" + CardValues[index] + "-" + CardValues[index] + "-"
-                            + CardValues[index + 1] + "-" + CardValues[index + 1] + "-" + CardValues[index + 1] + "-"
-                            + CardValues[index + 2] + "-" + CardValues[index + 2] + "-" + CardValues[index + 2] + "-"
-                            + CardValues[index + 3] + "-" + CardValues[index + 3] + "-" + CardValues[index + 3] + "-"
-                            + CardValues[index + 4] + "-" + CardValues[index + 4] + "-" + CardValues[index + 4] + "-"
-                            + CardValues[index + 5] + "-" + CardValues[index + 5] + "-" + CardValues[index + 5];
+                        key = EngineTool.RepeatCard(index + 5, 3) + "-" +
+                              EngineTool.RepeatCard(index + 4, 3) + "-" +
+                              EngineTool.RepeatCard(index + 3, 3) + "-" +
+                              EngineTool.RepeatCard(index + 2, 3) + "-" +
+                              EngineTool.RepeatCard(index + 1, 3) + "-" +
+                              EngineTool.RepeatCard(index, 3);
                         liulianfeiji.Add(key, new CardType() {CardKey = key, Weight = weight++, Name = CardName.LiuLianFeiJi, IsBomb = false});
                     }
                 }
@@ -821,9 +820,9 @@ namespace fucklandlord.engine
                     {
                         for (int step = 0; step < 15; step++)
                         {
-                            if (!CardValues[index].Equals(CardValues[step]))
+                            if (index != step)
                             {
-                                key = CardValues[index] + "-" + CardValues[index] + "-" + CardValues[index] + "-"
+                                key = EngineTool.RepeatCard(index, 3) + "-"
                                     + CardValues[step];
                                 sandaiyige.Add(key, new CardType() {CardKey = key, Weight = weight++, Name = CardName.SanDaiYiGe, IsBomb = false});
                             }
@@ -836,36 +835,551 @@ namespace fucklandlord.engine
 
         private static Dictionary<String, CardType> feijidailiangge = null;
         /// <summary>
-        /// 飞机带两个（牌型 - 权重值） 共182种
+        /// 飞机带两个（牌型key - 牌型entity）
         /// 3-3-3-4-4-4-8-9 8-8-8-9-9-9-J-K ... K-K-K-A-A-A-BJ-8 ... 
         /// </summary>
         public static Dictionary<String, CardType> FeiJiDaiLianGe
         {
             get
             {
-                if (sandaiyige == null)
+                if (feijidailiangge == null)
                 {
-                    sandaiyige = new Dictionary<string, CardType>();
+                    feijidailiangge = new Dictionary<string, CardType>();
+                    int weight = 1;
+                    String key = null;
+
+                    List<int> steps = new List<int>();
+                    bool invalid = false;
+
+                    for (int index = 0; index < 11; index++)
+                    {
+                        for (int step = 0; step < 15; step++)
+                        {
+                            for (int step2 = 0; step2 < 15; step2++)
+                            {
+                                invalid = false;
+
+                                // 确保两个单个 大的在前面
+                                steps.Clear();
+                                steps.Add(step); steps.Add(step2); steps.Sort();
+
+                                key = EngineTool.RepeatCard(index + 1, 3) + "-" +
+                                      EngineTool.RepeatCard(index, 3) + "-" +
+                                      CardValues[steps[1]] + "-" + CardValues[steps[0]];
+
+                                // 任何非大小王的卡牌不超4张
+                                for (int i = 0; i < 13; i++)
+                                {
+                                    if (EngineTool.CountInCardStr(key, CardValues[i]) > 4)
+                                    {
+                                        invalid = true;
+                                        break;
+                                    }
+                                }
+
+                                if (invalid)
+                                {
+                                    continue;
+                                }
+
+                                // 大小王最多各一张
+                                if (EngineTool.CountInCardStr(key, CardValues[13]) > 1)
+                                {
+                                    continue;
+                                }
+
+                                if (EngineTool.CountInCardStr(key, CardValues[14]) > 1)
+                                {
+                                    continue;
+                                }
+
+                                // 确保该牌型不重复
+                                if (feijidailiangge.ContainsKey(key))
+                                {
+                                    continue;
+                                }
+                                feijidailiangge.Add(key, new CardType() { CardKey = key, Weight = weight, Name = CardName.FeiJiDaiLiangGe, IsBomb = false });
+                            }
+                        }
+
+                        weight++;
+                    }
+                }
+                return feijidailiangge;
+            }
+        }
+
+
+        private static Dictionary<String, CardType> sanlianfeijidaisange = null;
+        /// <summary>
+        /// 三连飞机带三个（牌型key - 牌型entity）
+        /// 3-3-3-4-4-4-5-5-5-8-9-10 8-8-8-9-9-9-10-10-10-BJ-LJ-2 ... Q-Q-Q-K-K-K-A-A-A-Q-K-A ... 
+        /// </summary>
+        public static Dictionary<String, CardType> SanLianFeiJiDaiSanGe
+        {
+            get
+            {
+                if (sanlianfeijidaisange == null)
+                {
+                    sanlianfeijidaisange = new Dictionary<string, CardType>();
+                    int weight = 1;
+                    String key = null;
+
+                    bool invalid = false;
+                    List<int> steps = new List<int>();
+
+                    for (int index = 0; index < 10; index++)
+                    {
+                        for (int step = 0; step < 15; step++)
+                        {
+                            for (int step2 = 0; step2 < 15; step2++)
+                            {
+                                for (int step3 = 0; step3 < 15; step3++)
+                                {
+                                    invalid = false;
+
+                                    steps.Clear();
+                                    steps.Add(step); steps.Add(step2); steps.Add(step3); steps.Sort();
+
+                                    key = EngineTool.RepeatCard(index + 2, 3) + "-" +
+                                          EngineTool.RepeatCard(index + 1, 3) + "-" +
+                                          EngineTool.RepeatCard(index, 3) + "-" +
+                                          CardValues[steps[2]] + "-" + CardValues[steps[1]] + "-" + CardValues[steps[0]];
+
+                                    for (int i = 0; i < 13; i++)
+                                    {
+                                        if (EngineTool.CountInCardStr(key, CardValues[i]) > 4)
+                                        {
+                                            invalid = true;
+                                            break;
+                                        }
+                                    }
+
+                                    if (invalid)
+                                    {
+                                        continue;
+                                    }
+
+                                    if (EngineTool.CountInCardStr(key, CardValues[13]) > 1)
+                                    {
+                                        continue;
+                                    }
+
+                                    if (EngineTool.CountInCardStr(key,CardValues[14]) > 1)
+                                    {
+                                        continue;
+                                    }
+
+                                    if (sanlianfeijidaisange.ContainsKey(key))
+                                    {
+                                        continue;
+                                    }
+                                    sanlianfeijidaisange.Add(key, new CardType() { CardKey = key, Weight = weight, Name = CardName.SanLianFeiJiDaiSanGe, IsBomb = false });
+                                }
+                            }
+                        }
+
+                        weight++;
+                    }
+                }
+                return sanlianfeijidaisange;
+            }
+        }
+
+        private static Dictionary<String, CardType> silianfeijidaisige = null;
+        /// <summary>
+        /// 四连飞机带四个（牌型key - 牌型entity）
+        /// 3-3-3-4-4-4-5-5-5-6-6-6-8-9-10-J ... J-J-J-Q-Q-Q-K-K-K-A-A-A-J-Q-K-A ... 
+        /// </summary>
+        public static Dictionary<String, CardType> SiLianFeiJiDaiSiGe
+        {
+            get
+            {
+                if (silianfeijidaisige == null)
+                {
+                    silianfeijidaisige = new Dictionary<string, CardType>();
+                    int weight = 1;
+                    String key = null;
+
+                    bool invalid = false;
+                    List<int> steps = new List<int>();
+
+                    for (int index = 0; index < 9; index++)
+                    {
+                        for (int step = 0; step < 15; step++)
+                        {
+                            for (int step2 = 0; step2 < 15; step2++)
+                            {
+                                for (int step3 = 0; step3 < 15; step3++)
+                                {
+                                    for (int step4 = 0; step4 < 15; step4++)
+                                    {
+                                        invalid = false;
+                                        steps.Clear();
+                                        steps.Add(step); steps.Add(step2); steps.Add(step3); steps.Add(step4); steps.Sort();
+
+                                        key = EngineTool.RepeatCard(index + 3, 3) + "-" +
+                                              EngineTool.RepeatCard(index + 2, 3) + "-" +
+                                              EngineTool.RepeatCard(index + 1, 3) + "-" +
+                                              EngineTool.RepeatCard(index, 3) + "-" +
+                                              CardValues[steps[3]] + "-" + CardValues[steps[2]] + "-" + CardValues[steps[1]] + "-" + CardValues[steps[0]];
+
+                                        for (int i = 0; i < 13; i++)
+                                        {
+                                            if (EngineTool.CountInCardStr(key, CardValues[i]) > 4)
+                                            {
+                                                invalid = true;
+                                                break;
+                                            }
+                                        }
+
+                                        if (invalid)
+                                        {
+                                            continue;
+                                        }
+
+                                        if (EngineTool.CountInCardStr(key, CardValues[13]) > 1)
+                                        {
+                                            continue;
+                                        }
+
+                                        if (EngineTool.CountInCardStr(key, CardValues[14]) > 1)
+                                        {
+                                            continue;
+                                        }
+
+                                        if (silianfeijidaisige.ContainsKey(key))
+                                        {
+                                            continue;
+                                        }
+                                        silianfeijidaisige.Add(key, new CardType() { CardKey = key, Weight = weight, Name = CardName.SiLianFeiJiDaiSiGe, IsBomb = false });
+                                    }
+                                }
+                            }
+                        }
+
+                        weight++;
+                    }
+                }
+                return silianfeijidaisige;
+            }
+        }
+
+        private static Dictionary<String, CardType> wulianfeijidaiwuge = null;
+        /// <summary>
+        /// 五连飞机带五个（牌型key - 牌型entity）
+        /// 3-3-3-4-4-4-5-5-5-6-6-6-7-7-7-8-9-10-J-Q ... 10-10-10-J-J-J-Q-Q-Q-K-K-K-A-A-A-10-J-Q-K-A ... 
+        /// </summary>
+        public static Dictionary<String, CardType> WuLianFeiJiDaiWuGe
+        {
+            get
+            {
+                if (wulianfeijidaiwuge == null)
+                {
+                    wulianfeijidaiwuge = new Dictionary<string, CardType>();
+                    int weight = 1;
+                    String key = null;
+
+                    bool invalid = false;
+                    List<int> steps = new List<int>();
+
+                    for (int index = 0; index < 8; index++)
+                    {
+                        for (int step = 0; step < 15; step++)
+                        {
+                            for (int step2 = 0; step2 < 15; step2++)
+                            {
+                                for (int step3 = 0; step3 < 15; step3++)
+                                {
+                                    for (int step4 = 0; step4 < 15; step4++)
+                                    {
+                                        for (int step5 = 0; step5 < 15; step5++)
+                                        {
+                                            invalid = false;
+                                            steps.Clear();
+                                            steps.Add(step); steps.Add(step2); steps.Add(step3); steps.Add(step4); steps.Add(step5); steps.Sort();
+
+                                            key = EngineTool.RepeatCard(index + 4, 3) + "-" +
+                                                  EngineTool.RepeatCard(index + 3, 3) + "-" +
+                                                  EngineTool.RepeatCard(index + 2, 3) + "-" +
+                                                  EngineTool.RepeatCard(index + 1, 3) + "-" +
+                                                  EngineTool.RepeatCard(index, 3) + "-" +
+                                                  CardValues[steps[4]] + "-" + CardValues[steps[3]] + "-" + CardValues[steps[2]] + "-" + CardValues[steps[1]] + "-" + CardValues[steps[0]];
+
+                                            for (int i = 0; i < 13; i++)
+                                            {
+                                                if (EngineTool.CountInCardStr(key, CardValues[i]) > 4)
+                                                {
+                                                    invalid = true;
+                                                    break;
+                                                }
+                                            }
+
+                                            if (invalid)
+                                            {
+                                                continue;
+                                            }
+
+                                            if (EngineTool.CountInCardStr(key, CardValues[13]) > 1)
+                                            {
+                                                continue;
+                                            }
+
+                                            if (EngineTool.CountInCardStr(key, CardValues[14]) > 1)
+                                            {
+                                                continue;
+                                            }
+
+                                            if (wulianfeijidaiwuge.ContainsKey(key))
+                                            {
+                                                continue;
+                                            }
+                                            wulianfeijidaiwuge.Add(key, new CardType() { CardKey = key, Weight = weight, Name = CardName.WuLianFeiJiDaiWuGe, IsBomb = false });
+                                        }
+                                    }
+                                }
+                            }
+                        }
+
+                        weight++;
+                    }
+                }
+                return wulianfeijidaiwuge;
+            }
+        }
+
+
+        private static Dictionary<String, CardType> sandaiyidui = null;
+        /// <summary>
+        /// 三带一对（牌型key - 牌型entity）
+        /// 3-3-3-4-4 ... A-A-A-2-2 ... 10-10-10-A-A ...
+        /// </summary>
+        public static Dictionary<String, CardType> SanDaiYiDui
+        {
+            get
+            {
+                if (sandaiyidui == null)
+                {
+                    sandaiyidui = new Dictionary<string, CardType>();
                     int weight = 1;
                     String key = null;
 
                     for (int index = 0; index < 13; index++)
                     {
-                        for (int step = 0; step < 15; step++)
+                        for (int step = 0; step < 13; step++)
                         {
-                            if (!CardValues[index].Equals(CardValues[step]))
+                            if (index != step)
                             {
-                                sandaiyige.Add(CardValues[index] + "-" + CardValues[index] + "-" + CardValues[index] + "-"
-                                             + CardValues[step], weight++);
+                                key = EngineTool.RepeatCard(index, 3) + "-" +
+                                      EngineTool.RepeatCard(step, 2);
+                                sandaiyidui.Add(key, new CardType() { CardKey = key, Weight = weight++, Name = CardName.SanDaiYiDui, IsBomb = false });
                             }
                         }
                     }
                 }
-                return sandaiyige;
+                return sandaiyidui;
             }
         }
 
+        private static Dictionary<String, CardType> feijidailiangdui = null;
+        /// <summary>
+        /// 飞机带两对（牌型key - 牌型entity）
+        /// 3-3-3-4-4-4-8-8-9-9 ... K-K-K-A-A-A-3-3-2-2 ... 
+        /// </summary>
+        public static Dictionary<String, CardType> FeiJiDaiLianDui
+        {
+            get
+            {
+                if (feijidailiangdui == null)
+                {
+                    feijidailiangdui = new Dictionary<string, CardType>();
+                    int weight = 1;
+                    String key = null;
 
+                    bool invalid = false;
+                    List<int> steps = new List<int>();
+
+                    for (int index = 0; index < 11; index++)
+                    {
+                        for (int step = 0; step < 13; step++)
+                        {
+                            for (int step2 = 0; step2 < 13; step2++)
+                            {
+                                invalid = false;
+                                // 确保两个对子 大的在前面
+                                steps.Clear();
+                                steps.Add(step); steps.Add(step2); steps.Sort();
+
+                                key = EngineTool.RepeatCard(index + 1, 3) + "-" +
+                                      EngineTool.RepeatCard(index, 3) + "-" +
+                                      EngineTool.RepeatCard(steps[1], 2) + "-" + EngineTool.RepeatCard(steps[0], 2);
+
+                                // 任何非大小王的卡牌不超4张
+                                for (int i = 0; i < 13; i++)
+                                {
+                                    if (EngineTool.CountInCardStr(key, CardValues[i]) > 4)
+                                    {
+                                        invalid = true;
+                                        break;
+                                    }
+                                }
+
+                                if (invalid)
+                                {
+                                    continue;
+                                }
+
+                                // 确保该牌型不重复
+                                if (feijidailiangdui.ContainsKey(key))
+                                {
+                                    continue;
+                                }
+                                feijidailiangdui.Add(key, new CardType() { CardKey = key, Weight = weight, Name = CardName.FeiJiDaiLiangDui, IsBomb = false });
+                            }
+                        }
+
+                        weight++;
+                    }
+                }
+                return feijidailiangdui;
+            }
+        }
+
+        private static Dictionary<String, CardType> sanlianfeijidaisandui = null;
+        /// <summary>
+        /// 三连飞机带三对（牌型key - 牌型entity）
+        /// 3-3-3-4-4-4-5-5-5-8-8-9-9-10-10 ... Q-Q-Q-K-K-K-A-A-A-J-J-3-3-2-2 ... 
+        /// </summary>
+        public static Dictionary<String, CardType> SanLianFeiJiDaiSanDui
+        {
+            get
+            {
+                if (sanlianfeijidaisandui == null)
+                {
+                    sanlianfeijidaisandui = new Dictionary<string, CardType>();
+                    int weight = 1;
+                    String key = null;
+
+                    bool invalid = false;
+                    List<int> steps = new List<int>();
+
+                    for (int index = 0; index < 10; index++)
+                    {
+                        for (int step = 0; step < 13; step++)
+                        {
+                            for (int step2 = 0; step2 < 13; step2++)
+                            {
+                                for (int step3 = 0; step3 < 13; step3++)
+                                {
+                                    invalid = false;
+
+                                    steps.Clear();
+                                    steps.Add(step); steps.Add(step2); steps.Add(step3); steps.Sort();
+
+                                    key = EngineTool.RepeatCard(index + 2, 3) + "-" +
+                                          EngineTool.RepeatCard(index + 1, 3) + "-" +
+                                          EngineTool.RepeatCard(index, 3) + "-" +
+                                          EngineTool.RepeatCard(steps[2], 2) + "-" + EngineTool.RepeatCard(steps[1], 2) + "-" + EngineTool.RepeatCard(steps[0], 2);
+
+                                    for (int i = 0; i < 13; i++)
+                                    {
+                                        if (EngineTool.CountInCardStr(key, CardValues[i]) > 4)
+                                        {
+                                            invalid = true;
+                                            break;
+                                        }
+                                    }
+
+                                    if (invalid)
+                                    {
+                                        continue;
+                                    }
+
+                                    if (sanlianfeijidaisandui.ContainsKey(key))
+                                    {
+                                        continue;
+                                    }
+                                    sanlianfeijidaisandui.Add(key, new CardType() { CardKey = key, Weight = weight, Name = CardName.SanLianFeiJiDaiSanDui, IsBomb = false });
+                                }
+                            }
+                        }
+
+                        weight++;
+                    }
+                }
+                return sanlianfeijidaisandui;
+            }
+        }
+
+        private static Dictionary<String, CardType> silianfeijidaisidui = null;
+        /// <summary>
+        /// 四连飞机带四对（牌型key - 牌型entity）
+        /// 3-3-3-4-4-4-5-5-5-6-6-6-8-8-9-9-10-10-J-J ... J-J-J-Q-Q-Q-K-K-K-A-A-A-10-10-6-6-3-3-2-2 ... 
+        /// </summary>
+        public static Dictionary<String, CardType> SiLianFeiJiDaiSiDui
+        {
+            get
+            {
+                if (silianfeijidaisidui == null)
+                {
+                    silianfeijidaisidui = new Dictionary<string, CardType>();
+                    int weight = 1;
+                    String key = null;
+
+                    bool invalid = false;
+                    List<int> steps = new List<int>();
+
+                    for (int index = 0; index < 9; index++)
+                    {
+                        for (int step = 0; step < 13; step++)
+                        {
+                            for (int step2 = 0; step2 < 13; step2++)
+                            {
+                                for (int step3 = 0; step3 < 13; step3++)
+                                {
+                                    for (int step4 = 0; step4 < 13; step4++)
+                                    {
+                                        invalid = false;
+
+                                        steps.Clear();
+                                        steps.Add(step); steps.Add(step2); steps.Add(step3); steps.Add(step4); steps.Sort();
+
+                                        key = EngineTool.RepeatCard(index + 3, 3) + "-" +
+                                              EngineTool.RepeatCard(index + 2, 3) + "-" +
+                                              EngineTool.RepeatCard(index + 1, 3) + "-" +
+                                              EngineTool.RepeatCard(index, 3) + "-" +
+                                              EngineTool.RepeatCard(steps[3], 2) + "-" + EngineTool.RepeatCard(steps[2], 2) + "-" + EngineTool.RepeatCard(steps[1], 2) + "-" + EngineTool.RepeatCard(steps[0], 2);
+
+                                        for (int i = 0; i < 13; i++)
+                                        {
+                                            if (EngineTool.CountInCardStr(key, CardValues[i]) > 4)
+                                            {
+                                                invalid = true;
+                                                break;
+                                            }
+                                        }
+
+                                        if (invalid)
+                                        {
+                                            continue;
+                                        }
+
+                                        if (silianfeijidaisidui.ContainsKey(key))
+                                        {
+                                            continue;
+                                        }
+                                        silianfeijidaisidui.Add(key, new CardType() { CardKey = key, Weight = weight, Name = CardName.SiLianFeiJiDaiSiDui, IsBomb = false });
+                                    }
+                                }
+                            }
+                        }
+
+                        weight++;
+                    }
+                }
+                return silianfeijidaisidui;
+            }
+        }
 
         private static Dictionary<String, CardType> sidailiangge = null;
         /// <summary>
@@ -882,23 +1396,52 @@ namespace fucklandlord.engine
                     int weight = 1;
                     String key = null;
 
+                    bool invalid = false;
+                    List<int> steps = new List<int>();
+
                     for (int index = 0; index < 13; index++)
                     {
                         for (int step = 0; step < 15; step++)
                         {
-                            for(int step2 = step; step2 < 15; step2++)
+                            for(int step2 = 0; step2 < 15; step2++)
                             {
-                                if(index != step && index != step2)
+                                invalid = false;
+
+                                steps.Clear();
+                                steps.Add(step); steps.Add(step2); steps.Sort();
+
+                                key = EngineTool.RepeatCard(index, 4) + "-" +
+                                      CardValues[steps[1]] + "-" + CardValues[steps[0]];
+
+                                for (int i = 0; i < 13; i++)
                                 {
-                                    // ignore 2 BJ or 2 LJ
-                                    if (step == step2 && (step > 12))
+                                    if (EngineTool.CountInCardStr(key, CardValues[i]) > 4)
                                     {
-                                        continue;
+                                        invalid = true;
+                                        break;
                                     }
-                                    key = CardValues[index] + "-" + CardValues[index] + "-" + CardValues[index] + "-" + CardValues[index] + "-"
-                                        + CardValues[step] + "-" + CardValues[step2];
-                                    sidailiangge.Add(key, new CardType() {CardKey = key, Weight = weight, Name = CardName.SiDaiLiangGe, IsBomb = false});
                                 }
+
+                                if (invalid)
+                                {
+                                    continue;
+                                }
+
+                                if (EngineTool.CountInCardStr(key, CardValues[13]) > 1)
+                                {
+                                    continue;
+                                }
+
+                                if (EngineTool.CountInCardStr(key, CardValues[14]) > 1)
+                                {
+                                    continue;
+                                }
+
+                                if (sidailiangge.ContainsKey(key))
+                                {
+                                    continue;
+                                }
+                                sidailiangge.Add(key, new CardType() {CardKey = key, Weight = weight, Name = CardName.SiDaiLiangGe, IsBomb = false});
                             }
                         }
                         weight++;  //只以四个比较大小，带的两张随便
@@ -923,19 +1466,43 @@ namespace fucklandlord.engine
                     int weight = 1;
                     String key = null;
 
+                    bool invalid = false;
+                    List<int> steps = new List<int>();
+
                     for (int index = 0; index < 13; index++)
                     {
                         for (int step = 0; step < 13; step++)
                         {
-                            for (int step2 = step + 1; step2 < 13; step2++) 
+                            for (int step2 = 0; step2 < 13; step2++) 
                             {
-                                if (index != step && index != step2) 
+                                invalid = false;
+
+                                steps.Clear();
+                                steps.Add(step); steps.Add(step2); steps.Sort();
+
+                                key = EngineTool.RepeatCard(index, 4) + "-" +
+                                      EngineTool.RepeatCard(steps[1], 2) + "-" +
+                                      EngineTool.RepeatCard(steps[0], 2);
+
+                                for (int i = 0; i < 13; i++)
                                 {
-                                    key = CardValues[index] + "-" + CardValues[index] + "-" + CardValues[index] + "-" + CardValues[index] + "-"
-                                        + CardValues[step] + "-" + CardValues[step] + "-"
-                                        + CardValues[step2] + "-" + CardValues[step2];
-                                    sidailiangdui.Add(key, new CardType() {CardKey = key, Weight = weight, Name = CardName.SiDaiLiangDui, IsBomb = false});
+                                    if (EngineTool.CountInCardStr(key, CardValues[i]) > 4)
+                                    {
+                                        invalid = true;
+                                        break;
+                                    }
                                 }
+
+                                if (invalid)
+                                {
+                                    continue;
+                                }
+
+                                if (sidailiangdui.ContainsKey(key))
+                                {
+                                    continue;
+                                }
+                                sidailiangdui.Add(key, new CardType() {CardKey = key, Weight = weight, Name = CardName.SiDaiLiangDui, IsBomb = false});
                             }
                         }
                         weight++; //只以四个比较大小，带的两对随便

@@ -10,7 +10,7 @@ namespace fucklandlord.engine
     /// </summary>
     public class CardName
     {
-        public static String Dange = "单张";
+        public static String DanGe = "单张";
         public static String WuLianShun = "五连顺";
         public static String LiuLianShun = "六连顺";
         public static String QiLianShun = "七连顺";
