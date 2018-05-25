@@ -30,5 +30,10 @@ namespace fucklandlord.engine
         {
             get;set;
         }
+
+        public override string ToString()
+        {
+            return "CardKey=>" + CardKey + " Name=>" + Name + " Weight=>" + Weight + " IsBomb=>" + IsBomb;
+        }
     }
 }

@@ -8,7 +8,7 @@ namespace fucklandlord.engine
     /// <summary>
     /// 牌型名称  一共37种牌型
     /// </summary>
-    public class CardName
+    public class CardTypeName
     {
         public static String DanGe = "单张";
         public static String WuLianShun = "五连顺";

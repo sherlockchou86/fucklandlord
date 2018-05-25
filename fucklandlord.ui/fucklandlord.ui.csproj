@@ -1,0 +1,284 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{91D287B3-1C2E-4131-A71B-885D502B78C7}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>fucklandlord.ui</RootNamespace>
+    <AssemblyName>fucklandlord.ui</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Card.cs" />
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ucDesk.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucDesk.Designer.cs">
+      <DependentUpon>ucDesk.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ucLastCards.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucLastCards.Designer.cs">
+      <DependentUpon>ucLastCards.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ucMyBoard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucMyBoard.Designer.cs">
+      <DependentUpon>ucMyBoard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ucOtherBoard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucOtherBoard.Designer.cs">
+      <DependentUpon>ucOtherBoard.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="ucMyBoard.resx">
+      <DependentUpon>ucMyBoard.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\6_of_clubs.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\6_of_diamonds.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\6_of_hearts.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\6_of_spades.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\7_of_clubs.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\7_of_diamonds.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\7_of_hearts.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\7_of_spades.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\8_of_clubs.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\8_of_diamonds.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\8_of_hearts.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\8_of_spades.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\9_of_clubs.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\9_of_diamonds.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\9_of_hearts.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\9_of_spades.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\10_of_clubs.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\10_of_diamonds.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\10_of_hearts.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\10_of_spades.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ace_of_clubs.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ace_of_diamonds.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ace_of_hearts.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ace_of_spades.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\black_joker.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\jack_of_clubs.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\jack_of_diamonds.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\jack_of_hearts.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\jack_of_spades.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\king_of_clubs.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\king_of_diamonds.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\king_of_hearts.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\king_of_spades.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\queen_of_clubs.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\queen_of_diamonds.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\queen_of_hearts.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\queen_of_spades.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\red_joker.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\2_of_clubs.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\2_of_diamonds.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\2_of_hearts.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\2_of_spades.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\3_of_clubs.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\3_of_diamonds.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\3_of_hearts.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\3_of_spades.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\4_of_clubs.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\4_of_diamonds.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\4_of_hearts.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\4_of_spades.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\5_of_clubs.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\5_of_diamonds.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\5_of_hearts.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\5_of_spades.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\fucklandlord.engine\fucklandlord.engine.csproj">
+      <Project>{820F0488-5B37-49F8-913E-E571549FC2C8}</Project>
+      <Name>fucklandlord.engine</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

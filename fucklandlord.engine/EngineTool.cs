@@ -5,7 +5,7 @@ using System.Text;
 
 namespace fucklandlord.engine
 {
-    class EngineTool
+    public class EngineTool
     {
         /// <summary>
         /// 格式化扑克牌字符串
@@ -46,7 +46,7 @@ namespace fucklandlord.engine
                 int index_a = EngineValues.CardValues.IndexOf(a);
                 int index_b = EngineValues.CardValues.IndexOf(b);
 
-                if (index_a >= index_b)
+                if (index_a > index_b)
                 {
                     return -1;
                 }
@@ -103,6 +103,55 @@ namespace fucklandlord.engine
             card_str = card_str.TrimEnd('-');
 
             return card_str;
+        }
+
+        /// <summary>
+        /// 负责将类似 {3-3-3, A, 6-6, BJ, 4-4}  整理成  BJ-A-6-6-4-4-3-3-3
+        /// </summary>
+        /// <param name="input"></param>
+        /// <returns></returns>
+        public static String SuperSort(List<String> input)
+        {
+            String a1, b1;
+            int index_a, index_b;
+
+            input.Sort((a, b) =>
+            {
+                a1 = a.Split('-')[0];
+                b1 = b.Split('-')[0];
+
+                index_a = EngineValues.CardValues.IndexOf(a1);
+                index_b = EngineValues.CardValues.IndexOf(b1);
+
+                if (index_a > index_b)
+                {
+                    return -1;
+                }
+                else
+                {
+                    return 1;
+                }
+            });
+
+            return String.Join("-", input);
+        }
+
+        /// <summary>
+        /// 计算指定卡牌的索引（0~53 或者 0~14）
+        /// </summary>
+        /// <param name="card_str"></param>
+        /// <param name="colored"></param>
+        /// <returns></returns>
+        public static int IndexOfCard(String card_str, bool colored)
+        {
+            if (colored)  // 有花色
+            {
+                return EngineValues.Cards.IndexOf(card_str);
+            }
+            else  // 无花色
+            {
+                return EngineValues.CardValues.IndexOf(card_str);
+            }
         }
     }
 }

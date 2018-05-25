@@ -13,306 +13,52 @@ namespace fucklandlord.test
     {
         static void Main(string[] args)
         {
-            #region 输出37种牌型
-            DateTime start = DateTime.Now;
-            //// 单张
-            //EngineValues.DanGe.Values.ToList().ForEach((c) => 
-            //    {
-            //        System.Console.WriteLine("牌型=>" + c.CardKey + " 权重值=>" + c.Weight + " 名称=>" + c.Name);
-            //    });
-            //System.Console.WriteLine();
+            GameEngine engine = new GameEngine();
 
+            // 输入手牌，检查牌型
+            List<CardType> cards = engine.Check(new List<string> {"K*H", "Q*S", "K*C", "K*D", "Q*C", "Q*D", "K*H", "Q*S", "J*S", "J*H", "BJ", "J*D" });
 
-            //// 五连顺
-            //EngineValues.WuLianShun.Values.ToList().ForEach((c) =>
-            //    {
-            //        System.Console.WriteLine("牌型=>" + c.CardKey + " 权重值=>" + c.Weight + " 名称=>" + c.Name);
-            //    });
-            //System.Console.WriteLine();
-
-
-            //// 六连顺
-            //EngineValues.LiuLianShun.Values.ToList().ForEach((c) =>
-            //{
-            //    System.Console.WriteLine("牌型=>" + c.CardKey + " 权重值=>" + c.Weight + " 名称=>" + c.Name);
-            //});
-            //System.Console.WriteLine();
-
-
-            //// 七连顺
-            //EngineValues.QiLianShun.Values.ToList().ForEach((c) =>
-            //{
-            //    System.Console.WriteLine("牌型=>" + c.CardKey + " 权重值=>" + c.Weight + " 名称=>" + c.Name);
-            //});
-            //System.Console.WriteLine();
-
-
-            //// 八连顺
-            //EngineValues.BaLianShun.Values.ToList().ForEach((c) =>
-            //{
-            //    System.Console.WriteLine("牌型=>" + c.CardKey + " 权重值=>" + c.Weight + " 名称=>" + c.Name);
-            //});
-            //System.Console.WriteLine();
-
-
-            //// 九连顺
-            //EngineValues.JiuLianShun.Values.ToList().ForEach((c) =>
-            //{
-            //    System.Console.WriteLine("牌型=>" + c.CardKey + " 权重值=>" + c.Weight + " 名称=>" + c.Name);
-            //});
-            //System.Console.WriteLine();
-
-
-            //// 十连顺
-            //EngineValues.ShiLianShun.Values.ToList().ForEach((c) =>
-            //{
-            //    System.Console.WriteLine("牌型=>" + c.CardKey + " 权重值=>" + c.Weight + " 名称=>" + c.Name);
-            //});
-            //System.Console.WriteLine();
-
-
-            //// 十一连顺
-            //EngineValues.ShiYiLianShun.Values.ToList().ForEach((c) =>
-            //{
-            //    System.Console.WriteLine("牌型=>" + c.CardKey + " 权重值=>" + c.Weight + " 名称=>" + c.Name);
-            //});
-            //System.Console.WriteLine();
-
-
-            //// 十二连顺
-            //EngineValues.ShiErLianShun.Values.ToList().ForEach((c) =>
-            //{
-            //    System.Console.WriteLine("牌型=>" + c.CardKey + " 权重值=>" + c.Weight + " 名称=>" + c.Name);
-            //});
-            //System.Console.WriteLine();
-
-
-
-            //// 对子
-            //EngineValues.DuiZi.Values.ToList().ForEach((c) =>
-            //{
-            //    System.Console.WriteLine("牌型=>" + c.CardKey + " 权重值=>" + c.Weight + " 名称=>" + c.Name);
-            //});
-            //System.Console.WriteLine();
-
-
-            //// 三连对
-            //EngineValues.SanLianDui.Values.ToList().ForEach((c) =>
-            //{
-            //    System.Console.WriteLine("牌型=>" + c.CardKey + " 权重值=>" + c.Weight + " 名称=>" + c.Name);
-            //});
-            //System.Console.WriteLine();
-
-
-            //// 四连对
-            //EngineValues.SiLianDui.Values.ToList().ForEach((c) =>
-            //{
-            //    System.Console.WriteLine("牌型=>" + c.CardKey + " 权重值=>" + c.Weight + " 名称=>" + c.Name);
-            //});
-            //System.Console.WriteLine();
-
-
-            //// 五连对
-            //EngineValues.WuLianDui.Values.ToList().ForEach((c) =>
-            //{
-            //    System.Console.WriteLine("牌型=>" + c.CardKey + " 权重值=>" + c.Weight + " 名称=>" + c.Name);
-            //});
-            //System.Console.WriteLine();
-
-
-            //// 六连对
-            //EngineValues.LiuLianDui.Values.ToList().ForEach((c) =>
-            //{
-            //    System.Console.WriteLine("牌型=>" + c.CardKey + " 权重值=>" + c.Weight + " 名称=>" + c.Name);
-            //});
-            //System.Console.WriteLine();
-
-
-            //// 七连对
-            //EngineValues.QiLianDui.Values.ToList().ForEach((c) =>
-            //{
-            //    System.Console.WriteLine("牌型=>" + c.CardKey + " 权重值=>" + c.Weight + " 名称=>" + c.Name);
-            //});
-            //System.Console.WriteLine();
-
-
-            //// 八连对
-            //EngineValues.BaLianDui.Values.ToList().ForEach((c) =>
-            //{
-            //    System.Console.WriteLine("牌型=>" + c.CardKey + " 权重值=>" + c.Weight + " 名称=>" + c.Name);
-            //});
-            //System.Console.WriteLine();
-
-
-            //// 九连对
-            //EngineValues.JiuLianDui.Values.ToList().ForEach((c) =>
-            //{
-            //    System.Console.WriteLine("牌型=>" + c.CardKey + " 权重值=>" + c.Weight + " 名称=>" + c.Name);
-            //});
-            //System.Console.WriteLine();
-
-
-            //// 十连对
-            //EngineValues.ShiLianDui.Values.ToList().ForEach((c) =>
-            //{
-            //    System.Console.WriteLine("牌型=>" + c.CardKey + " 权重值=>" + c.Weight + " 名称=>" + c.Name);
-            //});
-            //System.Console.WriteLine();
-
-
-            //// 三张
-            //EngineValues.SanZhang.Values.ToList().ForEach((c) =>
-            //{
-            //    System.Console.WriteLine("牌型=>" + c.CardKey + " 权重值=>" + c.Weight + " 名称=>" + c.Name);
-            //});
-            //System.Console.WriteLine();
-
-
-            //// 飞机
-            //EngineValues.FeiJi.Values.ToList().ForEach((c) =>
-            //{
-            //    System.Console.WriteLine("牌型=>" + c.CardKey + " 权重值=>" + c.Weight + " 名称=>" + c.Name);
-            //});
-            //System.Console.WriteLine();
-
-
-            //// 三连飞机 
-            //EngineValues.SanLianFeiJi.Values.ToList().ForEach((c) =>
-            //{
-            //    System.Console.WriteLine("牌型=>" + c.CardKey + " 权重值=>" + c.Weight + " 名称=>" + c.Name);
-            //});
-            //System.Console.WriteLine();
-
-
-            //// 四连飞机
-            //EngineValues.SiLianFeiJi.Values.ToList().ForEach((c) =>
-            //{
-            //    System.Console.WriteLine("牌型=>" + c.CardKey + " 权重值=>" + c.Weight + " 名称=>" + c.Name);
-            //});
-            //System.Console.WriteLine();
-
-
-            //// 五连飞机
-            //EngineValues.WuLianFeiJi.Values.ToList().ForEach((c) =>
-            //{
-            //    System.Console.WriteLine("牌型=>" + c.CardKey + " 权重值=>" + c.Weight + " 名称=>" + c.Name);
-            //});
-            //System.Console.WriteLine();
-
-
-            //// 六连飞机
-            //EngineValues.LiuLianFeiJi.Values.ToList().ForEach((c) =>
-            //{
-            //    System.Console.WriteLine("牌型=>" + c.CardKey + " 权重值=>" + c.Weight + " 名称=>" + c.Name);
-            //});
-            //System.Console.WriteLine();
-
-
-            //// 三带一个
-            //EngineValues.SanDaiYiGe.Values.ToList().ForEach((c) =>
-            //{
-            //    System.Console.WriteLine("牌型=>" + c.CardKey + " 权重值=>" + c.Weight + " 名称=>" + c.Name);
-            //});
-            //System.Console.WriteLine();
-
-
-            //// 飞机带两个
-            //EngineValues.FeiJiDaiLianGe.Values.ToList().ForEach((c) =>
-            //{
-            //    System.Console.WriteLine("牌型=>" + c.CardKey + " 权重值=>" + c.Weight + " 名称=>" + c.Name);
-            //});
-            //System.Console.WriteLine();
-
-
-            //// 三连飞机带三个
-            //EngineValues.SanLianFeiJiDaiSanGe.Values.ToList().ForEach((c) =>
-            //{
-            //    System.Console.WriteLine("牌型=>" + c.CardKey + " 权重值=>" + c.Weight + " 名称=>" + c.Name);
-            //});
-            //System.Console.WriteLine();
-
-
-            //// 四连飞机带四个
-            //EngineValues.SiLianFeiJiDaiSiGe.Values.ToList().ForEach((c) =>
-            //{
-            //    System.Console.WriteLine("牌型=>" + c.CardKey + " 权重值=>" + c.Weight + " 名称=>" + c.Name);
-            //});
-            //System.Console.WriteLine();
-
-
-            // 五连飞机带五个
-            EngineValues.WuLianFeiJiDaiWuGe.Values.ToList().ForEach((c) =>
+            if (cards != null)
             {
-                System.Console.WriteLine("牌型=>" + c.CardKey + " 权重值=>" + c.Weight + " 名称=>" + c.Name);
-            });
-            System.Console.WriteLine();
+                cards.ForEach((c) => { System.Console.WriteLine(c.ToString()); });
+            }
+            else
+            {
+                System.Console.WriteLine("无效牌型");
+            }
 
 
-            //// 三带一对
-            //EngineValues.SanDaiYiGe.Values.ToList().ForEach((c) =>
-            //{
-            //    System.Console.WriteLine("牌型=>" + c.CardKey + " 权重值=>" + c.Weight + " 名称=>" + c.Name);
-            //});
-            //System.Console.WriteLine();
+            // 洗牌
+            List<String> new_cards = engine.Shuffle();
+            System.Console.WriteLine("洗牌结果"); 
+            new_cards.ForEach((s) => { System.Console.Write(s + " "); });
 
 
-            //// 飞机带两对
-            //EngineValues.FeiJiDaiLianDui.Values.ToList().ForEach((c) =>
-            //{
-            //    System.Console.WriteLine("牌型=>" + c.CardKey + " 权重值=>" + c.Weight + " 名称=>" + c.Name);
-            //});
-            //System.Console.WriteLine();
+
+            // 发牌
+            List<String> first = new List<string>();  //第一个人的牌
+            List<String> second = new List<string>();  //第二个人的牌
+            List<String> third = new List<string>();  //第三个人的牌
+            List<String> last_cards = new List<string>();  //三张底牌
+
+            engine.Deal(new_cards, first, second, third, last_cards);
+
+            System.Console.WriteLine("发牌结果"); 
+            System.Console.WriteLine("第一个人的牌："); 
+            first.ForEach((s) => { System.Console.Write(s + " "); });
 
 
-            //// 三连飞机带三对
-            //EngineValues.SanLianFeiJiDaiSanDui.Values.ToList().ForEach((c) =>
-            //{
-            //    System.Console.WriteLine("牌型=>" + c.CardKey + " 权重值=>" + c.Weight + " 名称=>" + c.Name);
-            //});
-            //System.Console.WriteLine();
+            System.Console.WriteLine(""); 
+            System.Console.WriteLine("第二个人的牌：");
+            second.ForEach((s) => { System.Console.Write(s + " "); });
 
+            System.Console.WriteLine(""); 
+            System.Console.WriteLine("第三个人的牌：");
+            third.ForEach((s) => { System.Console.Write(s + " "); });
 
-            //// 四连飞机带四对
-            //EngineValues.SiLianFeiJiDaiSiDui.Values.ToList().ForEach((c) =>
-            //{
-            //    System.Console.WriteLine("牌型=>" + c.CardKey + " 权重值=>" + c.Weight + " 名称=>" + c.Name);
-            //});
-            //System.Console.WriteLine();
-
-
-            //// 四带两个
-            //EngineValues.SiDaiLiangGe.Values.ToList().ForEach((c) =>
-            //{
-            //    System.Console.WriteLine("牌型=>" + c.CardKey + " 权重值=>" + c.Weight + " 名称=>" + c.Name);
-            //});
-            //System.Console.WriteLine();
-
-
-            //// 四带两对
-            //EngineValues.SiDaiLiangDui.Values.ToList().ForEach((c) =>
-            //{
-            //    System.Console.WriteLine("牌型=>" + c.CardKey + " 权重值=>" + c.Weight + " 名称=>" + c.Name);
-            //});
-            //System.Console.WriteLine();
-
-
-            //// 炸弹
-            //EngineValues.ZhaDan.Values.ToList().ForEach((c) =>
-            //{
-            //    System.Console.WriteLine("牌型=>" + c.CardKey + " 权重值=>" + c.Weight + " 名称=>" + c.Name);
-            //});
-            //System.Console.WriteLine();
-
-
-            //// 王炸
-            //EngineValues.WangZha.Values.ToList().ForEach((c) =>
-            //{
-            //    System.Console.WriteLine("牌型=>" + c.CardKey + " 权重值=>" + c.Weight + " 名称=>" + c.Name);
-            //});
-            //System.Console.WriteLine();
-
-            System.Console.WriteLine("耗时：" + (DateTime.Now - start).TotalSeconds + "秒");
-            #endregion
+            System.Console.WriteLine(""); 
+            System.Console.WriteLine("三张底牌：");
+            last_cards.ForEach((s) => { System.Console.Write(s + " "); });
 
             System.Console.Read();
         }

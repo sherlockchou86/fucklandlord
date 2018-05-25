@@ -40,7 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CardName.cs" />
+    <Compile Include="CardTypeName.cs" />
     <Compile Include="CardType.cs" />
     <Compile Include="EngineTool.cs" />
     <Compile Include="GameEngine.cs" />
