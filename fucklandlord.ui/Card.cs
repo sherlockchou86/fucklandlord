@@ -17,7 +17,9 @@ namespace fucklandlord.ui
 
         public static int SelectedShow = 15;
 
-        private static List<Bitmap> all_images = new List<Bitmap> {
+        public static int BackTopShow = 16;
+
+        public static List<Bitmap> all_images = new List<Bitmap> {
             Properties.Resources._3_of_diamonds, Properties.Resources._3_of_clubs, Properties.Resources._3_of_hearts, Properties.Resources._3_of_spades,
             Properties.Resources._4_of_diamonds, Properties.Resources._4_of_clubs, Properties.Resources._4_of_hearts, Properties.Resources._4_of_spades,
             Properties.Resources._5_of_diamonds, Properties.Resources._5_of_clubs, Properties.Resources._5_of_hearts, Properties.Resources._5_of_spades,
@@ -95,7 +97,14 @@ namespace fucklandlord.ui
         {
             get
             {
-                return new Rectangle(X, Y, Width, Height);
+                if (Selected)
+                {
+                    return new Rectangle(X, Y - SelectedShow, Width, Height);
+                }
+                else
+                {
+                    return new Rectangle(X, Y, Width, Height);
+                }
             }
         }
 

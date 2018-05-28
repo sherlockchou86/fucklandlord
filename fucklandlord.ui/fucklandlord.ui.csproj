@@ -53,6 +53,7 @@
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="PlayCardEventHandler.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ucDesk.cs">
@@ -92,8 +93,14 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="ucDesk.resx">
+      <DependentUpon>ucDesk.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ucMyBoard.resx">
       <DependentUpon>ucMyBoard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucOtherBoard.resx">
+      <DependentUpon>ucOtherBoard.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -272,6 +279,9 @@
       <Project>{820F0488-5B37-49F8-913E-E571549FC2C8}</Project>
       <Name>fucklandlord.engine</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\back.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

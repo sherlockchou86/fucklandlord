@@ -13,6 +13,7 @@ namespace fucklandlord.ui
 {
     public partial class MainForm : Form
     {
+        public static GameEngine engine;
         public MainForm()
         {
             InitializeComponent();
@@ -20,10 +21,18 @@ namespace fucklandlord.ui
 
             new Thread(() => {
 
-                GameEngine engine = new GameEngine();
-                List<String> cards = engine.Shuffle();
+                engine = new GameEngine();
+                List<String> cards = engine.Shuffle();  //洗牌
 
-                foreach (string c in cards)
+                List<String> first = new List<string>();
+                List<String> second = new List<string>();
+                List<String> third = new List<string>();
+
+                List<String> last_cards = new List<string>();
+
+                engine.Deal(cards, first, second, third, last_cards);  //发牌
+
+                foreach (string c in third)  // third为我的牌
                 {
                     ucMyBoard1.CreateNewCard(c);
                     Thread.Sleep(100);

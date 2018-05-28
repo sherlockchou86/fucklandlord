@@ -82,6 +82,7 @@ namespace fucklandlord.ui
         protected override void OnPaint(PaintEventArgs e)
         {
             base.OnPaint(e);
+
             DrawCards(e.Graphics);
         }
 
@@ -99,7 +100,7 @@ namespace fucklandlord.ui
                 {
                     if (cards[i].Region.Contains(e.Location))
                     {
-                        cards[i].Selected = true;
+                        cards[i].Selected = !cards[i].Selected;
                         Invalidate();
                         break;
                     }
@@ -156,7 +157,7 @@ namespace fucklandlord.ui
 
             int total_card_width = (cards.Count - 1) * Card.LeftShow + Card.Width;
 
-            int start_x = (this.Width - 100 - total_card_width) / 2;
+            int start_x = (this.Width - total_card_width) / 2;
             int start_y = (this.Height - Card.Height) / 2;
 
             for (int i = 0; i < cards.Count; ++i)
