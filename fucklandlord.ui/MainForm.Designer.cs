@@ -33,6 +33,7 @@
             this.ucOtherBoard2 = new fucklandlord.ui.ucOtherBoard();
             this.ucOtherBoard1 = new fucklandlord.ui.ucOtherBoard();
             this.ucMyBoard1 = new fucklandlord.ui.ucMyBoard();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // ucDesk1
@@ -56,6 +57,8 @@
             // 
             this.ucOtherBoard2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
                         | System.Windows.Forms.AnchorStyles.Right)));
+            this.ucOtherBoard2.IsLandLord = false;
+            this.ucOtherBoard2.IsMyTurn = false;
             this.ucOtherBoard2.Location = new System.Drawing.Point(690, 2);
             this.ucOtherBoard2.Name = "ucOtherBoard2";
             this.ucOtherBoard2.Size = new System.Drawing.Size(178, 378);
@@ -65,6 +68,8 @@
             // 
             this.ucOtherBoard1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
                         | System.Windows.Forms.AnchorStyles.Left)));
+            this.ucOtherBoard1.IsLandLord = false;
+            this.ucOtherBoard1.IsMyTurn = false;
             this.ucOtherBoard1.Location = new System.Drawing.Point(2, 2);
             this.ucOtherBoard1.Name = "ucOtherBoard1";
             this.ucOtherBoard1.Size = new System.Drawing.Size(178, 378);
@@ -74,16 +79,29 @@
             // 
             this.ucMyBoard1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
+            this.ucMyBoard1.IsLandLord = false;
+            this.ucMyBoard1.IsMyTurn = false;
             this.ucMyBoard1.Location = new System.Drawing.Point(2, 388);
             this.ucMyBoard1.Name = "ucMyBoard1";
             this.ucMyBoard1.Size = new System.Drawing.Size(866, 211);
             this.ucMyBoard1.TabIndex = 0;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(782, 565);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 5;
+            this.button1.Text = "重新开始";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(869, 600);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.ucDesk1);
             this.Controls.Add(this.ucLastCards1);
             this.Controls.Add(this.ucOtherBoard2);
@@ -105,5 +123,6 @@
         private ucOtherBoard ucOtherBoard2;
         private ucLastCards ucLastCards1;
         private ucDesk ucDesk1;
+        private System.Windows.Forms.Button button1;
     }
 }

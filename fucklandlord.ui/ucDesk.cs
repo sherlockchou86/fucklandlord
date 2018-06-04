@@ -12,7 +12,7 @@ namespace fucklandlord.ui
 {
     public partial class ucDesk : UserControl
     {
-        private List<String> cards_str = new List<string>() { "7*C", "7*S", "5*D", "4*D", "3*C" };
+        private List<String> cards_str = new List<string>();
 
         public ucDesk()
         {
@@ -32,6 +32,8 @@ namespace fucklandlord.ui
             cards_str.AddRange(new_cards_str);
 
             label1.Text = new_card_type_name;
+
+            Invalidate();
         }
 
         protected override void OnPaint(PaintEventArgs e)
@@ -51,7 +53,7 @@ namespace fucklandlord.ui
 
             for (int i = 0; i < cards_str.Count; ++i)
             {
-                e.Graphics.DrawImage(Card.all_images[EngineTool.IndexOfCard(cards_str[i], true)], start_x + Card.LeftShow * i, start_y, (int)(Card.Width * 0.8), (int)(Card.Height * 0.8));
+                e.Graphics.DrawImage(Card.all_images[EngineTool.IndexOfCard(cards_str[i], true)], start_x + Card.LeftShow * i, start_y, (int)(Card.Width * 0.9), (int)(Card.Height * 0.9));
             }
 
 

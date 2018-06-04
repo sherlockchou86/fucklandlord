@@ -47,6 +47,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Card.cs" />
+    <Compile Include="CardTypeChoose.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CardTypeChoose.Designer.cs">
+      <DependentUpon>CardTypeChoose.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -80,6 +86,9 @@
     <Compile Include="ucOtherBoard.Designer.cs">
       <DependentUpon>ucOtherBoard.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="CardTypeChoose.resx">
+      <DependentUpon>CardTypeChoose.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>

@@ -17,7 +17,23 @@ namespace fucklandlord.ui
 
         private int rest_time = 30;
 
-        private bool is_landlord = false;
+        public bool IsLandLord { get; set; }
+
+        private bool isMyTurn = false;
+        public bool IsMyTurn 
+        {
+            get
+            {
+                return isMyTurn;
+            }
+            set
+            {
+                isMyTurn = value;
+                rest_time = 30;
+            }
+        }
+
+        public event PlayCardEventHandler PlayCard;
 
         public ucMyBoard()
         {
@@ -63,16 +79,18 @@ namespace fucklandlord.ui
             }
 
             updateCardsLocation();
+        }
 
-            if (this.InvokeRequired)
-            {
-                this.Invoke((Action)(()=>{ Invalidate();}));
-            }
-            else
-            {
-                Invalidate();
-            }
-            
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Reset()
+        {
+            IsMyTurn = false;
+            IsLandLord = false;
+            cards.Clear();
+
+            updateCardsLocation();
         }
 
         /// <summary>
@@ -94,6 +112,7 @@ namespace fucklandlord.ui
         {
             base.OnMouseDown(e);
 
+            // 选牌
             if (e.Button == System.Windows.Forms.MouseButtons.Left)
             {
                 for (int i = cards.Count - 1; i >= 0; i--)
@@ -107,11 +126,81 @@ namespace fucklandlord.ui
                 }
             }
 
+            // 出牌
             if (e.Button == System.Windows.Forms.MouseButtons.Right)
             {
+                if (PlayCard != null && IsMyTurn)
+                {
+                    List<String> ls = new List<string>();
+                    foreach (Card c in cards)
+                    {
+                        if (c.Selected)
+                        {
+                            ls.Add(c.CardValue);
+                        }
+                    }
 
+                    // 检查牌型
+                    List<CardType> types = MainForm.engine.Check(ls);
+
+                    // 有效牌型
+                    if (types != null)
+                    {
+                        if (types.Count == 1)
+                        {
+                            PlayCard(ls, types[0]);
+                        }
+                        else
+                        {
+                            using (CardTypeChoose ctc = new CardTypeChoose(types))
+                            {
+                                if (ctc.ShowDialog() == DialogResult.OK)
+                                {
+                                    PlayCard(ls, ctc.Type);
+                                }
+                            }
+                        }
+
+                        cards.RemoveAll((c) => { return ls.Contains(c.CardValue); });
+
+                        updateCardsLocation();
+                    }
+                }
             }
         }
+
+
+        Card current_card = null;
+        /// <summary>
+        /// 鼠标移动，批量选牌
+        /// </summary>
+        /// <param name="e"></param>
+        protected override void OnMouseMove(MouseEventArgs e)
+        {
+            base.OnMouseMove(e);
+
+            if (e.Button == System.Windows.Forms.MouseButtons.Left)
+            {
+                for (int i = cards.Count - 1; i >= 0; --i )
+                {
+                    if (cards[i].Region.Contains(e.Location) && current_card != cards[i])
+                    {
+                        current_card = cards[i];
+                        cards[i].Selected = !cards[i].Selected;
+                        Invalidate();
+                        break;
+                    }
+
+                    if (cards[i].Region.Contains(e.Location))
+                    {
+                        break;
+                    }
+                }
+
+                Application.DoEvents();
+            }
+        }
+
 
         /// <summary>
         /// 界面尺寸改变时，重新计算大小
@@ -164,6 +253,58 @@ namespace fucklandlord.ui
             {
                 cards[i].Y = start_y;
                 cards[i].X = start_x + Card.LeftShow * i;
+            }
+
+            if (this.InvokeRequired)
+            {
+                this.Invoke((Action)(() => { Invalidate(); }));
+            }
+            else
+            {
+                Invalidate();
+            }
+        }
+
+        /// <summary>
+        /// 计时器
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            if (IsMyTurn)
+            {
+                label1.Visible = true;
+                button1.Visible = true;
+                label1.Text = (rest_time--).ToString();
+                Invalidate();
+            }
+            else
+            {
+                label1.Visible = false;
+                button1.Visible = false;
+            }
+
+            if (rest_time == 0)
+            {
+                // 自动出牌
+                if (PlayCard != null)
+                {
+                    PlayCard(null, null);
+                }
+            }
+        }
+
+        /// <summary>
+        /// 过牌  或者 要不起
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (PlayCard != null)
+            {
+                PlayCard(null, null);
             }
         }
     }

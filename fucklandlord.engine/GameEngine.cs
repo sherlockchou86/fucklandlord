@@ -10,6 +10,11 @@ namespace fucklandlord.engine
     /// </summary>
     public class GameEngine
     {
+        public bool IsInitialized
+        {
+            get;
+            set;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -296,10 +301,28 @@ namespace fucklandlord.engine
         }
 
         /// <summary>
+        /// auto play
+        /// </summary>
+        /// <param name="input"></param>
+        /// <param name="target"></param>
+        /// <returns></returns>
+        public List<List<String>> AutoPlay(List<String> input, CardType target)
+        {
+            List<List<String>> result = new List<List<string>>();
+
+        }
+
+        /// <summary>
         /// 
         /// </summary>
         private void init()
         {
+            if (IsInitialized)
+            {
+                return;
+            }
+
+
             System.Console.WriteLine("game engine is intializing...");
 
             DateTime start = DateTime.Now;
@@ -601,6 +624,8 @@ namespace fucklandlord.engine
 
             System.Console.WriteLine("cost：" + (DateTime.Now - start).TotalSeconds + " seconds");
             System.Console.WriteLine();
+
+            IsInitialized = true;
         }
     }
 }

@@ -153,5 +153,37 @@ namespace fucklandlord.engine
                 return EngineValues.CardValues.IndexOf(card_str);
             }
         }
+
+        /// <summary>
+        /// 根据指定牌型，将卡牌排序
+        /// 卡牌：{6*S, 6*D, 6*H, 7*D, 7*H, 7*S, 7*C, 6*C}  牌型：6-6-6-7-7-7-7-6（飞机带两个）
+        /// 排序后：{6*S, 6*H, 6*C, 7*S, 7*H, 7*C, 7*D, 6*D}
+        /// 
+        /// </summary>
+        /// <param name="input"></param>
+        /// <param name="type"></param>
+        public static List<String> SortWithCardType(List<String> input, CardType type)
+        {
+            List<String> target = type.CardKey.Split('-').ToList();
+
+            for (int i = 0; i < target.Count; ++i)
+            {
+                for (int j = EngineValues.CardColors.Count - 1; j >= 0; --j)
+                {
+                    if (input.Contains(target[i] + "*" + EngineValues.CardColors[j]) && !target.Contains(target[i] + "*" + EngineValues.CardColors[j]))
+                    {
+                        target[i] = target[i] + "*" + EngineValues.CardColors[j];
+                        break;
+                    }
+
+                    if (input.Contains(target[i]))
+                    {
+                        break;
+                    }
+                }
+            }
+
+            return target;
+        }
     }
 }

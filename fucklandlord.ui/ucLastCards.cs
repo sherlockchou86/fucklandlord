@@ -12,7 +12,7 @@ namespace fucklandlord.ui
 {
     public partial class ucLastCards : UserControl
     {
-        private List<String> cards = new List<string>() {"K*C", "7*S", "BJ" };
+        private List<String> cards = new List<string>();
 
         public ucLastCards()
         {
@@ -23,6 +23,14 @@ namespace fucklandlord.ui
                  | ControlStyles.AllPaintingInWmPaint
                  | ControlStyles.UserPaint,
                  true);  
+        }
+
+        public void UpdateLastCards(List<String> new_last_cards)
+        {
+            cards.Clear();
+            cards.AddRange(new_last_cards);
+
+            Invalidate();
         }
 
         protected override void OnPaint(PaintEventArgs e)
