@@ -18,9 +18,9 @@ namespace fucklandlord.engine
         /// <summary>
         /// 
         /// </summary>
-        public GameEngine()
+        public GameEngine(bool initLog = false)
         {
-            init();
+            init(initLog);
         }
 
         /// <summary>
@@ -301,21 +301,9 @@ namespace fucklandlord.engine
         }
 
         /// <summary>
-        /// auto play
-        /// </summary>
-        /// <param name="input"></param>
-        /// <param name="target"></param>
-        /// <returns></returns>
-        public List<List<String>> AutoPlay(List<String> input, CardType target)
-        {
-            List<List<String>> result = new List<List<string>>();
-
-        }
-
-        /// <summary>
         /// 
         /// </summary>
-        private void init()
+        private void init(bool print_log)
         {
             if (IsInitialized)
             {
@@ -329,7 +317,8 @@ namespace fucklandlord.engine
             // 单张
             EngineValues.DanGe.Values.ToList().ForEach((c) =>
             {
-                //c.ForEach((l) => { System.Console.WriteLine(l.ToString()); });
+                if (print_log)
+                    c.ForEach((l) => { System.Console.WriteLine(l.ToString()); });
             });
             System.Console.WriteLine();
 
@@ -337,7 +326,8 @@ namespace fucklandlord.engine
             // 五连顺
             EngineValues.WuLianShun.Values.ToList().ForEach((c) =>
             {
-                //c.ForEach((l) => { System.Console.WriteLine(l.ToString()); });
+                if (print_log)
+                    c.ForEach((l) => { System.Console.WriteLine(l.ToString()); });
             });
             System.Console.WriteLine();
 
@@ -345,7 +335,8 @@ namespace fucklandlord.engine
             // 六连顺
             EngineValues.LiuLianShun.Values.ToList().ForEach((c) =>
             {
-                //c.ForEach((l) => { System.Console.WriteLine(l.ToString()); });
+                if (print_log)
+                    c.ForEach((l) => { System.Console.WriteLine(l.ToString()); });
             });
             System.Console.WriteLine();
 
@@ -353,7 +344,8 @@ namespace fucklandlord.engine
             // 七连顺
             EngineValues.QiLianShun.Values.ToList().ForEach((c) =>
             {
-                //c.ForEach((l) => { System.Console.WriteLine(l.ToString()); });
+                if (print_log)
+                    c.ForEach((l) => { System.Console.WriteLine(l.ToString()); });
             });
             System.Console.WriteLine();
 
@@ -361,7 +353,8 @@ namespace fucklandlord.engine
             // 八连顺
             EngineValues.BaLianShun.Values.ToList().ForEach((c) =>
             {
-                //c.ForEach((l) => { System.Console.WriteLine(l.ToString()); });
+                if (print_log)
+                    c.ForEach((l) => { System.Console.WriteLine(l.ToString()); });
             });
             System.Console.WriteLine();
 
@@ -369,7 +362,8 @@ namespace fucklandlord.engine
             // 九连顺
             EngineValues.JiuLianShun.Values.ToList().ForEach((c) =>
             {
-                //c.ForEach((l) => { System.Console.WriteLine(l.ToString()); });
+                if (print_log)
+                    c.ForEach((l) => { System.Console.WriteLine(l.ToString()); });
             });
             System.Console.WriteLine();
 
@@ -377,7 +371,8 @@ namespace fucklandlord.engine
             // 十连顺
             EngineValues.ShiLianShun.Values.ToList().ForEach((c) =>
             {
-                //c.ForEach((l) => { System.Console.WriteLine(l.ToString()); });
+                if (print_log)
+                    c.ForEach((l) => { System.Console.WriteLine(l.ToString()); });
             });
             System.Console.WriteLine();
 
@@ -385,7 +380,8 @@ namespace fucklandlord.engine
             // 十一连顺
             EngineValues.ShiYiLianShun.Values.ToList().ForEach((c) =>
             {
-                //c.ForEach((l) => { System.Console.WriteLine(l.ToString()); });
+                if (print_log)
+                    c.ForEach((l) => { System.Console.WriteLine(l.ToString()); });
             });
             System.Console.WriteLine();
 
@@ -393,7 +389,8 @@ namespace fucklandlord.engine
             // 十二连顺
             EngineValues.ShiErLianShun.Values.ToList().ForEach((c) =>
             {
-                //c.ForEach((l) => { System.Console.WriteLine(l.ToString()); });
+                if (print_log)
+                    c.ForEach((l) => { System.Console.WriteLine(l.ToString()); });
             });
             System.Console.WriteLine();
 
@@ -402,7 +399,8 @@ namespace fucklandlord.engine
             // 对子
             EngineValues.DuiZi.Values.ToList().ForEach((c) =>
             {
-                //c.ForEach((l) => { System.Console.WriteLine(l.ToString()); });
+                if (print_log)
+                    c.ForEach((l) => { System.Console.WriteLine(l.ToString()); });
             });
             System.Console.WriteLine();
 
@@ -410,7 +408,8 @@ namespace fucklandlord.engine
             // 三连对
             EngineValues.SanLianDui.Values.ToList().ForEach((c) =>
             {
-                //c.ForEach((l) => { System.Console.WriteLine(l.ToString()); });
+                if (print_log)
+                    c.ForEach((l) => { System.Console.WriteLine(l.ToString()); });
             });
             System.Console.WriteLine();
 
@@ -418,7 +417,8 @@ namespace fucklandlord.engine
             // 四连对
             EngineValues.SiLianDui.Values.ToList().ForEach((c) =>
             {
-                //c.ForEach((l) => { System.Console.WriteLine(l.ToString()); });
+                if (print_log)
+                    c.ForEach((l) => { System.Console.WriteLine(l.ToString()); });
             });
             System.Console.WriteLine();
 
@@ -426,7 +426,8 @@ namespace fucklandlord.engine
             // 五连对
             EngineValues.WuLianDui.Values.ToList().ForEach((c) =>
             {
-                //c.ForEach((l) => { System.Console.WriteLine(l.ToString()); });
+                if (print_log)
+                    c.ForEach((l) => { System.Console.WriteLine(l.ToString()); });
             });
             System.Console.WriteLine();
 
@@ -434,7 +435,8 @@ namespace fucklandlord.engine
             // 六连对
             EngineValues.LiuLianDui.Values.ToList().ForEach((c) =>
             {
-                //c.ForEach((l) => { System.Console.WriteLine(l.ToString()); });
+                if (print_log)
+                    c.ForEach((l) => { System.Console.WriteLine(l.ToString()); });
             });
             System.Console.WriteLine();
 
@@ -442,7 +444,8 @@ namespace fucklandlord.engine
             // 七连对
             EngineValues.QiLianDui.Values.ToList().ForEach((c) =>
             {
-                //c.ForEach((l) => { System.Console.WriteLine(l.ToString()); });
+                if (print_log)
+                    c.ForEach((l) => { System.Console.WriteLine(l.ToString()); });
             });
             System.Console.WriteLine();
 
@@ -450,7 +453,8 @@ namespace fucklandlord.engine
             // 八连对
             EngineValues.BaLianDui.Values.ToList().ForEach((c) =>
             {
-                //c.ForEach((l) => { System.Console.WriteLine(l.ToString()); });
+                if (print_log)
+                    c.ForEach((l) => { System.Console.WriteLine(l.ToString()); });
             });
             System.Console.WriteLine();
 
@@ -458,7 +462,8 @@ namespace fucklandlord.engine
             // 九连对
             EngineValues.JiuLianDui.Values.ToList().ForEach((c) =>
             {
-                //c.ForEach((l) => { System.Console.WriteLine(l.ToString()); });
+                if (print_log)
+                    c.ForEach((l) => { System.Console.WriteLine(l.ToString()); });
             });
             System.Console.WriteLine();
 
@@ -466,7 +471,8 @@ namespace fucklandlord.engine
             // 十连对
             EngineValues.ShiLianDui.Values.ToList().ForEach((c) =>
             {
-                //c.ForEach((l) => { System.Console.WriteLine(l.ToString()); });
+                if (print_log)
+                    c.ForEach((l) => { System.Console.WriteLine(l.ToString()); });
             });
             System.Console.WriteLine();
 
@@ -474,7 +480,8 @@ namespace fucklandlord.engine
             // 三张
             EngineValues.SanZhang.Values.ToList().ForEach((c) =>
             {
-                //c.ForEach((l) => { System.Console.WriteLine(l.ToString()); });
+                if (print_log)
+                    c.ForEach((l) => { System.Console.WriteLine(l.ToString()); });
             });
             System.Console.WriteLine();
 
@@ -482,7 +489,8 @@ namespace fucklandlord.engine
             // 飞机
             EngineValues.FeiJi.Values.ToList().ForEach((c) =>
             {
-                //c.ForEach((l) => { System.Console.WriteLine(l.ToString()); });
+                if (print_log)
+                    c.ForEach((l) => { System.Console.WriteLine(l.ToString()); });
             });
             System.Console.WriteLine();
 
@@ -490,7 +498,8 @@ namespace fucklandlord.engine
             // 三连飞机 
             EngineValues.SanLianFeiJi.Values.ToList().ForEach((c) =>
             {
-                //c.ForEach((l) => { System.Console.WriteLine(l.ToString()); });
+                if (print_log)
+                    c.ForEach((l) => { System.Console.WriteLine(l.ToString()); });
             });
             System.Console.WriteLine();
 
@@ -498,7 +507,8 @@ namespace fucklandlord.engine
             // 四连飞机
             EngineValues.SiLianFeiJi.Values.ToList().ForEach((c) =>
             {
-                //c.ForEach((l) => { System.Console.WriteLine(l.ToString()); });
+                if (print_log)
+                    c.ForEach((l) => { System.Console.WriteLine(l.ToString()); });
             });
             System.Console.WriteLine();
 
@@ -506,7 +516,8 @@ namespace fucklandlord.engine
             // 五连飞机
             EngineValues.WuLianFeiJi.Values.ToList().ForEach((c) =>
             {
-                //c.ForEach((l) => { System.Console.WriteLine(l.ToString()); });
+                if (print_log)
+                    c.ForEach((l) => { System.Console.WriteLine(l.ToString()); });
             });
             System.Console.WriteLine();
 
@@ -514,7 +525,8 @@ namespace fucklandlord.engine
             // 六连飞机
             EngineValues.LiuLianFeiJi.Values.ToList().ForEach((c) =>
             {
-                //c.ForEach((l) => { System.Console.WriteLine(l.ToString()); });
+                if (print_log)
+                    c.ForEach((l) => { System.Console.WriteLine(l.ToString()); });
             });
             System.Console.WriteLine();
 
@@ -522,7 +534,8 @@ namespace fucklandlord.engine
             // 三带一个
             EngineValues.SanDaiYiGe.Values.ToList().ForEach((c) =>
             {
-                //c.ForEach((l) => { System.Console.WriteLine(l.ToString()); });
+                if (print_log)
+                    c.ForEach((l) => { System.Console.WriteLine(l.ToString()); });
             });
             System.Console.WriteLine();
 
@@ -530,7 +543,8 @@ namespace fucklandlord.engine
             // 飞机带两个
             EngineValues.FeiJiDaiLianGe.Values.ToList().ForEach((c) =>
             {
-                //c.ForEach((l) => { System.Console.WriteLine(l.ToString()); });
+                if (print_log)
+                    c.ForEach((l) => { System.Console.WriteLine(l.ToString()); });
             });
             System.Console.WriteLine();
 
@@ -538,7 +552,8 @@ namespace fucklandlord.engine
             // 三连飞机带三个
             EngineValues.SanLianFeiJiDaiSanGe.Values.ToList().ForEach((c) =>
             {
-                //c.ForEach((l) => { System.Console.WriteLine(l.ToString()); });
+                if (print_log)
+                    c.ForEach((l) => { System.Console.WriteLine(l.ToString()); });
             });
             System.Console.WriteLine();
 
@@ -546,7 +561,8 @@ namespace fucklandlord.engine
             // 四连飞机带四个
             EngineValues.SiLianFeiJiDaiSiGe.Values.ToList().ForEach((c) =>
             {
-                //c.ForEach((l) => { System.Console.WriteLine(l.ToString()); });
+                if (print_log)
+                    c.ForEach((l) => { System.Console.WriteLine(l.ToString()); });
             });
             System.Console.WriteLine();
 
@@ -554,7 +570,8 @@ namespace fucklandlord.engine
             // 五连飞机带五个
             EngineValues.WuLianFeiJiDaiWuGe.Values.ToList().ForEach((c) =>
             {
-                //c.ForEach((l) => { System.Console.WriteLine(l.ToString()); });
+                if (print_log)
+                    c.ForEach((l) => { System.Console.WriteLine(l.ToString()); });
             });
             System.Console.WriteLine();
 
@@ -562,7 +579,8 @@ namespace fucklandlord.engine
             // 三带一对
             EngineValues.SanDaiYiGe.Values.ToList().ForEach((c) =>
             {
-                //c.ForEach((l) => { System.Console.WriteLine(l.ToString()); });
+                if (print_log)
+                    c.ForEach((l) => { System.Console.WriteLine(l.ToString()); });
             });
             System.Console.WriteLine();
 
@@ -570,7 +588,8 @@ namespace fucklandlord.engine
             // 飞机带两对
             EngineValues.FeiJiDaiLianDui.Values.ToList().ForEach((c) =>
             {
-                //c.ForEach((l) => { System.Console.WriteLine(l.ToString()); });
+                if (print_log)
+                    c.ForEach((l) => { System.Console.WriteLine(l.ToString()); });
             });
             System.Console.WriteLine();
 
@@ -578,7 +597,8 @@ namespace fucklandlord.engine
             // 三连飞机带三对
             EngineValues.SanLianFeiJiDaiSanDui.Values.ToList().ForEach((c) =>
             {
-                //c.ForEach((l) => { System.Console.WriteLine(l.ToString()); });
+                if (print_log)
+                    c.ForEach((l) => { System.Console.WriteLine(l.ToString()); });
             });
             System.Console.WriteLine();
 
@@ -586,7 +606,8 @@ namespace fucklandlord.engine
             // 四连飞机带四对
             EngineValues.SiLianFeiJiDaiSiDui.Values.ToList().ForEach((c) =>
             {
-                //c.ForEach((l) => { System.Console.WriteLine(l.ToString()); });
+                if (print_log)
+                    c.ForEach((l) => { System.Console.WriteLine(l.ToString()); });
             });
             System.Console.WriteLine();
 
@@ -594,7 +615,8 @@ namespace fucklandlord.engine
             // 四带两个
             EngineValues.SiDaiLiangGe.Values.ToList().ForEach((c) =>
             {
-                //c.ForEach((l) => { System.Console.WriteLine(l.ToString()); });
+                if (print_log)
+                    c.ForEach((l) => { System.Console.WriteLine(l.ToString()); });
             });
             System.Console.WriteLine();
 
@@ -602,7 +624,8 @@ namespace fucklandlord.engine
             // 四带两对
             EngineValues.SiDaiLiangDui.Values.ToList().ForEach((c) =>
             {
-                //c.ForEach((l) => { System.Console.WriteLine(l.ToString()); });
+                if (print_log)
+                    c.ForEach((l) => { System.Console.WriteLine(l.ToString()); });
             });
             System.Console.WriteLine();
 
@@ -610,7 +633,8 @@ namespace fucklandlord.engine
             // 炸弹
             EngineValues.ZhaDan.Values.ToList().ForEach((c) =>
             {
-                //c.ForEach((l) => { System.Console.WriteLine(l.ToString()); });
+                if (print_log)
+                    c.ForEach((l) => { System.Console.WriteLine(l.ToString()); });
             });
             System.Console.WriteLine();
 
@@ -618,7 +642,8 @@ namespace fucklandlord.engine
             // 王炸
             EngineValues.WangZha.Values.ToList().ForEach((c) =>
             {
-                //c.ForEach((l) => { System.Console.WriteLine(l.ToString()); });
+                if (print_log)
+                    c.ForEach((l) => { System.Console.WriteLine(l.ToString()); });
             });
             System.Console.WriteLine();
 

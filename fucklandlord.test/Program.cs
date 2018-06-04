@@ -13,7 +13,7 @@ namespace fucklandlord.test
     {
         static void Main(string[] args)
         {
-            GameEngine engine = new GameEngine();
+            GameEngine engine = new GameEngine(true);
 
             // 输入手牌，检查牌型
             List<CardType> cards = engine.Check(new List<string> {"K*H", "Q*S", "K*C", "K*D", "Q*C", "Q*D", "K*H", "Q*S", "J*S", "J*H", "BJ", "J*D" });
